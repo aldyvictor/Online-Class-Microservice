@@ -9,6 +9,16 @@ use Illuminate\Support\Facades\Validator;
 
 class CourseController extends Controller
 {
+    public function index(Request $request)
+    {
+        $courses = Course::query();
+
+        return response()->json([
+            'status' => 'success',
+            'data' => $courses->paginate(10)
+        ]);
+    }
+
     public function create(Request $request)
     {
         $rules = [
@@ -43,10 +53,10 @@ class CourseController extends Controller
             ], 404);
         }
 
-        $course = Course::create($data);
+        $courses = Course::create($data);
         return response()->json([
             'status' => 'success',
-            'data' => $course
+            'data' => $courses
         ]);
     }
 
@@ -75,8 +85,8 @@ class CourseController extends Controller
             ], 400);
         }
 
-        $course = Course::find($id);
-        if (!$course) {
+        $courses = Course::find($id);
+        if (!$courses) {
             return response()->json([
                 'status' => 'error',
                 'message' => 'course not found'
@@ -94,12 +104,12 @@ class CourseController extends Controller
             }
         }
 
-        $course->fill($data);
-        $course->save();
+        $courses->fill($data);
+        $courses->save();
 
         return response()->json([
             'status' => 'success',
-            'data' => $course
+            'data' => $courses
         ]);
     }
 }
