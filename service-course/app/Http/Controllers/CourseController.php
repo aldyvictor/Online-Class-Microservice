@@ -123,4 +123,22 @@ class CourseController extends Controller
             'data' => $courses
         ]);
     }
+
+    public function destroy($id)
+    {
+        $courses = Course::find($id);
+
+        if (!$courses) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'course not found'
+            ], 404);
+        }
+
+        $courses->delete();
+        return response()->json([
+            'status' => 'success',
+            'message' => 'course deleted'
+        ]);
+    }
 }
