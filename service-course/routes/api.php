@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChapterController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\MentorController;
 use Illuminate\Http\Request;
@@ -27,3 +28,6 @@ Route::post('courses', [CourseController::class, 'create']);
 Route::put('courses/{id}', [CourseController::class, 'update']);
 Route::get('courses', [CourseController::class, 'index']);
 Route::delete('courses/{id}', [CourseController::class, 'destroy']);
+
+// Endpoint Chapter
+Route::post('chapters', [ChapterController::class, 'create']);
