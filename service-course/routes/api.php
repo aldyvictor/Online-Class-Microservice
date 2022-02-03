@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\MentorController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -14,10 +15,12 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
+// Endpoint Mentors
 Route::get('mentors', [MentorController::class, 'index']);
 Route::get('mentors/{id}', [MentorController::class, 'show']);
 Route::post('mentors', [MentorController::class, 'create']);
 Route::put('mentors/{id}', [MentorController::class, 'update']);
 Route::delete('mentors/{id}', [MentorController::class, 'destroy']);
 
+// Endpoint Course
+Route::post('courses', [CourseController::class, 'create']);
