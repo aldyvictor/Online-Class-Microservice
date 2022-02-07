@@ -128,7 +128,7 @@ class ChapterController extends Controller
             return response()->json([
                 'status' => 'error',
                 'message' => 'chapter not found'
-            ]);
+            ], 404);
         }
 
         $chapter->delete();

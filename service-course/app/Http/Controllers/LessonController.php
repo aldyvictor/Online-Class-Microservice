@@ -67,7 +67,7 @@ class LessonController extends Controller
             return response()->json([
                 'status' => 'error',
                 'message' => 'chapter not found'
-            ]);
+            ], 404);
         }
 
         $lesson = Lesson::create($data);
@@ -101,7 +101,7 @@ class LessonController extends Controller
             return response()->json([
                 'status' => 'error',
                 'message' => 'lesson not found'
-            ]);
+            ], 404);
         }
 
         $chapterId = $request->input('chapter_id');
@@ -111,7 +111,7 @@ class LessonController extends Controller
                 return response()->json([
                     'status' => 'error',
                     'message' => 'chapter not found'
-                ]);
+                ], 404);
             }
         }
 
@@ -130,7 +130,7 @@ class LessonController extends Controller
             return response()->json([
                 'status' => 'error',
                 'message' => 'lesson not found'
-            ]);
+            ], 404);
         }
 
         $lesson->delete();
