@@ -25,19 +25,20 @@ Route::put('mentors/{id}', [MentorController::class, 'update']);
 Route::delete('mentors/{id}', [MentorController::class, 'destroy']);
 
 // Endpoint Course
+Route::get('courses', [CourseController::class, 'index']);
 Route::post('courses', [CourseController::class, 'create']);
 Route::put('courses/{id}', [CourseController::class, 'update']);
-Route::get('courses', [CourseController::class, 'index']);
 Route::delete('courses/{id}', [CourseController::class, 'destroy']);
 
 // Endpoint Chapter
-Route::post('chapters', [ChapterController::class, 'create']);
-Route::put('chapters/{id}', [ChapterController::class, 'update']);
 Route::get('chapters', [ChapterController::class, 'index']);
 Route::get('chapters/{id}', [ChapterController::class, 'show']);
+Route::post('chapters', [ChapterController::class, 'create']);
+Route::put('chapters/{id}', [ChapterController::class, 'update']);
 Route::delete('chapters/{id}', [ChapterController::class, 'destroy']);
 
 // Endpoint
-
+Route::get('lessons', [LessonController::class, 'index']);
+Route::get('lessons/{id}', [LessonController::class, 'show']);
 Route::post('lessons', [LessonController::class, 'create']);
 Route::put('lessons/{id}', [LessonController::class, 'update']);
