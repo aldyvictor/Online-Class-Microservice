@@ -47,3 +47,4 @@ Route::delete('lessons/{id}', [LessonController::class, 'destroy']);
 
 // Endpoint Image Course
 Route::post('image-courses', [ImageCourseController::class, 'create']);
+Route::delete('image-courses/{id}', [ImageCourseController::class, 'destroy']);
