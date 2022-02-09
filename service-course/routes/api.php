@@ -57,3 +57,4 @@ Route::get('my-courses', [MyCourseController::class, 'index']);
 
 // Endpoint Review
 Route::post('reviews', [ReviewController::class, 'create']);
+Route::put('reviews/{id}', [ReviewController::class, 'update']);
