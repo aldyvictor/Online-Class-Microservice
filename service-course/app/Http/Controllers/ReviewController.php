@@ -64,6 +64,8 @@ class ReviewController extends Controller
             'status' => 'success',
             'data' => $review
         ]);
+        // $url = env('SERVICE_USER_URL').'users/';
+        // return $url;
     }
 
     public function update(Request $request, $id)
