@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('orders', [OrderController::class, 'create']);
+Route::get('orders', [OrderController::class, 'index']);
+
+Route::post('webhook/midtrans', [App\Http\Controllers\WebhookController::class, 'midtransHandler']);
