@@ -55,6 +55,7 @@ Route::delete('image-courses/{id}', [ImageCourseController::class, 'destroy']);
 // Endpoint My Course
 Route::post('my-courses', [MyCourseController::class, 'create']);
 Route::get('my-courses', [MyCourseController::class, 'index']);
+Route::post('/my-courses/premium', [MyCourseController::class, 'createPremiumAccess']);
 
 // Endpoint Review
 Route::post('reviews', [ReviewController::class, 'create']);
